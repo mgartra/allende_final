@@ -81,8 +81,8 @@ text-align: center;
 .subTitleSmall{
     padding: 2rem;
     text-align: center;
-    background-color: #6D1E3A;
-    color: white;
+    color: #6D1E3A;
+    font-weight: bold;
 }
 /* Timeline / Pasos */
 .timeline {
