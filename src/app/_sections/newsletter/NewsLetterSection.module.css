@@ -1,0 +1,377 @@
+/* /app/sections/newsletter/NewsletterSection.module.css */
+.newsletterSection {
+    width: 100%;
+    min-height: 50vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin: 2rem;
+  
+}
+
+.backgroundOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('../../../../public/images/news2.jpg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.15;
+    z-index: 1;
+}
+
+.container {
+    max-width: 1200px;
+  background: linear-gradient(to left,
+            var(--color-primary),
+            var(--color-gradient-end, #200122));
+    overflow: hidden;
+    padding: 1rem;
+    padding-bottom: 3rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    position: relative;
+    border-radius: 3rem;
+
+}
+
+/* Contenido de texto */
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+}
+
+.badge {
+    
+    display:flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: #ECA121;
+    color: #120104;
+    padding: 0.5rem 2rem;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    width: fit-content;
+    margin: 1rem;
+}
+
+.badgeIcon {
+    font-size: 1.1rem;
+}
+
+
+
+
+
+.subtitle {
+    color: white;
+    font-size: 1.15rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.benefit {
+    color: #ECA121;
+    font-weight: bold;
+    margin-right: 0.5rem;
+}
+
+/* Formulario */
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.inputGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+
+
+.input {
+    flex: 1;
+    padding: 1rem 1.5rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1.4rem;
+    transition: all 0.3s ease;
+    background: white;
+    min-width: 0;
+    z-index: 2;
+    
+}
+
+.input:focus {
+    outline: none;
+    border-color: #6D1E3A;
+    box-shadow: 0 0 0 3px rgba(117, 20, 5, 0.15);
+}
+
+.input::placeholder {
+    color: #999;
+}
+.input,
+.button {
+  position: relative;
+  z-index: 3; 
+}
+.button {
+    background: #ECA121;
+    color: #120104;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.05rem;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+   
+}
+
+
+.button:disabled {
+    opacity: 0.8;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.buttonIcon {
+    font-size: 1.25rem;
+}
+
+.loadingSpinner {
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-top: 2px solid white;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.privacy {
+    color: white;
+    line-height: 1.5;
+    margin: 0;
+    display: flex;
+    align-items: flex-start;
+  
+    gap: 0.5rem;
+}
+
+.lockIcon {
+    font-size: 1.1rem;
+    color: #ECA121;
+    flex-shrink: 0;
+ 
+}
+
+
+
+.bookStack {
+    display: flex;
+    gap: 8px;
+    transform: rotate(-5deg);
+}
+
+.book {
+    width: 40px;
+    height: 60px;
+    background: linear-gradient(0deg, #6D1E3A 0%, #6D1E3A 100%);
+    border-radius: 4px 4px 2px 2px;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.15);
+    position: relative;
+    transform-origin: bottom;
+}
+
+.book:nth-child(1) {
+    height: 70px;
+    background: linear-gradient(0deg, #5d0e01 0%, #8b0000 100%);
+    transform: translateY(5px);
+}
+
+.book:nth-child(2) {
+    height: 65px;
+    background: linear-gradient(0deg, #6D1E3A 0%, #6D1E3A 100%);
+    transform: translateY(2px);
+}
+
+.book:nth-child(3) {
+    height: 60px;
+    background: linear-gradient(0deg, #8b1a1a 0%, #c41e3a 100%);
+}
+
+.mailIcon {
+    position: absolute;
+    font-size: 4rem;
+    color: rgba(117, 20, 5, 0.1);
+    top: -20px;
+    right: -30px;
+    z-index: -1;
+    animation: float 3s ease-in-out infinite;
+   
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Estado de éxito */
+.successSection {
+    background: #f9dbbd;
+    padding: 4rem 1.5rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.successContent {
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+
+.successTitle {
+    color: #6d1e3a;
+ 
+}
+
+.successMessage {
+    color: #120104;
+    font-size: 1.4rem;
+    line-height: 1.6;
+  
+}
+
+.successMessage strong {
+    color: #120104;
+    font-weight: 700;
+}
+
+.backButton {
+    background: #6d1e3a;
+    color: white;
+   padding: 1rem;
+   margin: 2rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+
+/* Responsive */
+
+
+
+@media (max-width: 900px) {
+    .newsletterSection {
+        padding: 3rem 1.5rem;
+        min-height: auto;
+    
+    }
+
+    .title {
+        font-size: 2rem;
+    }
+
+    .subtitle {
+        font-size: 1.05rem;
+    }
+
+    .bookStack {
+        transform: scale(0.8) rotate(-5deg);
+    }
+
+    .mailIcon {
+        font-size: 3rem;
+        top: -15px;
+        right: -20px;
+    }
+}
+
+@media (max-width: 600px) {
+    .newsletterSection {
+        padding: 2.5rem 1rem;
+    }
+
+    .title {
+        font-size: 1.75rem;
+    }
+
+    .highlight::after {
+        height: 6px;
+        bottom: 6px;
+    }
+
+    .button {
+        width: 100%;
+        justify-content: center;
+        padding: 0.875rem;
+    }
+
+    .inputGroup {
+        flex-direction: column;
+    }
+
+    .bookStack {
+        transform: scale(0.7) rotate(-5deg);
+    }
+
+    .illustration {
+        display: none;
+    
+    }
+}
+
+@media (min-width: 601px) {
+    .inputGroup {
+        flex-direction: row;
+        gap: 0;
+    }
+   
+    .input {
+        border-radius: 8px 0 0 8px !important;
+    }
+
+    .button {
+        border-radius: 0 8px 8px 0 !important;
+    }
+}

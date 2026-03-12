@@ -1,0 +1,196 @@
+/* /app/components/account/AccountDrawer.module.css */
+.drawerTitle {
+    color: #333;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+
+
+.userInfo {
+
+    border-radius: 16px;
+    padding: 1.5rem;
+
+}
+
+.userName {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #333;
+    margin: 0 0 0.5rem 0;
+}
+
+.userEmail {
+    color: #333;
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+.userTypeChip {
+    font-weight: 600;
+}
+
+.section {
+
+    border-radius: 16px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+   
+}
+
+.sectionTitle {
+    color: #333;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.emptyText {
+    color: #999;
+    font-style: italic;
+    text-align: center;
+    padding: 1rem;
+}
+
+
+.loanTitle {
+    font-weight: 600;
+    color: #333;
+    font-size: 1.05rem;
+}
+
+.loanDate {
+    color: #333;
+    font-size: 0.9rem;
+    margin-top: 0.25rem;
+}
+
+.loanTypeChip {
+    font-weight: 600;
+    font-size: 0.8rem;
+
+}
+
+.overdueChip {
+    font-weight: 700;
+
+}
+
+
+.userName {
+    font-weight: 600;
+    color: #333;
+}
+
+.userDate {
+    color: #B00020;
+    font-size: 0.9rem;
+    margin-top: 0.25rem;
+}
+
+
+
+.eventName {
+    font-weight: 600;
+    color: #333;
+}
+
+.eventStats {
+    color: #6D1E3A;
+    font-size: 0.9rem;
+    margin-top: 0.25rem;
+}
+
+.logoutSection {
+    margin-top: auto;
+}
+
+.logoutButton {
+    transition: all 0.3s ease;
+}
+
+/* ✅ Scrollbar personalizado (SIN selector universal) */
+/* Aplicar directamente a los contenedores scrollables */
+.scrollableSection::-webkit-scrollbar {
+    width: 6px;
+}
+
+.scrollableSection::-webkit-scrollbar-track {
+    background: #f5f5f5;
+    border-radius: 3px;
+}
+
+.scrollableSection::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 3px;
+}
+
+.scrollableSection::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+}
+
+.scrollableSection::-webkit-scrollbar-thumb:active {
+    background: #6D1E3A;
+}
+
+/* Firefox scrollbar (aplicar a elementos específicos) */
+.scrollableSection {
+    scrollbar-width: thin;
+    scrollbar-color: #c1c1c1 #f5f5f5;
+}
+
+/* src/components/account/AccountDrawer.module.css */
+
+.readButton {
+    background-color: #6d1e3a;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 4px 20px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+    min-width: 60px;
+    height: 32px;
+}
+
+.readButton:hover {
+    background-color: #400d1f;
+    transform: translateY(-1px);
+}
+
+.readButton:active {
+    transform: translateY(0);
+}
+
+
+/* Responsive */
+@media (max-width: 600px) {
+    .readButton {
+        padding: 6px 16px;
+        font-size: 0.95rem;
+        min-width: 70px;
+    }
+
+    .drawerTitle {
+        font-size: 1.25rem;
+    }
+
+    .userName {
+        font-size: 1.35rem;
+    }
+
+    .section {
+        padding: 1.25rem;
+    }
+
+    .loanTitle {
+        font-size: 1rem;
+    }
+
+    .loanDate {
+        font-size: 0.85rem;
+    }
+}

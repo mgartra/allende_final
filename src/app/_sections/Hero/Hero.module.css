@@ -1,0 +1,222 @@
+/* ============================================================================
+   HERO SECTION - Sistema de Diseño Biblioteca
+   Colores sincronizados con theme.ts
+   ============================================================================ */
+
+.hero {
+    position: relative;
+
+    max-height: 80vh;
+    width: 100%;
+    background: linear-gradient(to left,
+            var(--color-primary),
+            var(--color-gradient-end, #200122));
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+.gridContainer {
+    position: relative;
+    z-index: 2;
+    height: auto;
+    width: 100%;
+
+
+
+}
+
+.contentColumn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 6rem 2rem;
+    margin-top: 6rem;
+    width: 100%;
+}
+
+/* ============================================================================
+   TIPOGRAFÍA
+   ============================================================================ */
+
+.title {
+    font-family: var(--font-lora, 'Lora', serif);
+    text-align: left;
+    color: #FFFFFF;
+    margin-bottom: 1rem;
+
+    font-weight: 400;
+
+}
+
+.title span {
+    display: block;
+
+}
+
+.highlight {
+    color: var(--color-secondary, #ECA121);
+    font-weight: 600;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.subtitle {
+    font-family: var(--font-inter, 'Inter', sans-serif);
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 3rem;
+    max-width: 600px;
+    padding-left: 2rem;
+
+}
+
+/* ============================================================================
+   COLUMNA DERECHA (Botones)
+   ============================================================================ */
+
+.link {
+    text-decoration: none;
+}
+
+.buttonContainer {
+    gap: 1rem;
+
+}
+
+/* Botón Primario (Contained) */
+.primaryBtn {
+    background-color: var(--color-secondary, #ECA121) !important;
+    color: var(--color-primary, #6D1E3A) !important;
+    font-weight: 600 !important;
+    padding: 12px 32px !important;
+    border-radius: 50px !important;
+    font-size: 1.4rem !important;
+    transition: all 0.2s ease !important;
+}
+
+
+
+/* Botón Secundario (Outlined) */
+.secondaryBtn {
+    background-color: transparent !important;
+    color: #f2f0eb !important;
+    border: 2px solid #f2f0eb !important;
+    font-weight: 600 !important;
+    padding: 12px 32px !important;
+    border-radius: 50px !important;
+    font-size: 1.4rem !important;
+    transition: all 0.2s ease !important;
+}
+
+
+
+
+/* ============================================================================
+   FONDO DECORATIVO
+   ============================================================================ */
+
+.backgroundOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('../../../../public/images/hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.15;
+    z-index: 1;
+}
+
+/* ============================================================================
+   RESPONSIVE
+   ============================================================================ */
+
+@media (max-width: 599px) {
+
+
+    .buttonContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        padding: 2rem;
+    }
+}
+
+@media (max-width: 900px) {
+
+    .contentColumn {
+        padding: 3rem 1.5rem;
+    }
+
+    .title {
+
+        line-height: 3.4rem !important;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+        text-align: center;
+        font-style: normal;
+    }
+
+    .subtitle {
+        font-size: 1.4rem;
+        text-align: left;
+        padding-right: 1.5rem;
+
+    }
+
+    .contentColumnB {
+
+        margin-top: -2rem;
+        margin-bottom: 1rem;
+
+    }
+
+    .buttonContainer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        padding: 2rem;
+    }
+
+}
+
+@media (min-width:901px) {
+
+    .title {
+        line-height: 1rem !important;
+        margin-bottom: 6rem;
+    }
+
+    .contentColumnB {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 4.5rem;
+
+    }
+
+    .buttonContainer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1.5rem;
+        margin-top: 8rem;
+    }
+
+    .primaryBtn:hover {
+        background-color: var(--color-primary, ) !important;
+        color: #fff !important;
+    }
+
+    .secondaryBtn:hover {
+        background-color: var(--color-primary, ) !important;
+        color: #fff !important;
+        border: none !important;
+    }
+
+ 
+}

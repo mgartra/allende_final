@@ -1,0 +1,214 @@
+.mainWrapper {
+    background-color: #f9dbbd;
+    padding-bottom: 8rem;
+
+}
+
+.heroSection {
+    text-align: center;
+    padding: 6rem 1rem;
+    background: #f9dbbd;
+
+}
+
+.mainTitle {
+    color: var(--color-primary) !important;
+}
+
+.highlight {
+    color: #6D1E3A;
+    font-style: italic;
+}
+
+
+
+.heroSubtitle {
+    color: var(--color-text);
+    text-align: center;
+    max-width: 60rem;
+    margin: auto !important;
+
+}
+
+
+/* Secciones */
+.serviceSection {
+    background: white;
+    padding: 3rem;
+    border-radius: 1.5rem;
+    height: 100%;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+}
+
+.sectionHeader {
+  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 1.5rem;
+    color: #6D1E3A;
+}
+
+.sectionIcon {
+    font-size: 3rem;
+}
+
+.sectionDescription{
+
+text-align: center;
+ margin-bottom: 1.5rem;
+}
+
+/* Grid de reglas de préstamo */
+.rulesGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.ruleCard {
+    padding: 1.5rem;
+    border-radius: 1rem;
+    background: #fdf8f7;
+    border: 1px solid #f3e9e2;
+}
+
+.ruleIconWrapper {
+    margin-bottom: 1rem;
+}
+.subTitleSmall{
+    padding: 2rem;
+    text-align: center;
+    background-color: #6D1E3A;
+    color: white;
+}
+/* Timeline / Pasos */
+.timeline {
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.timelineItem {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+}
+
+.timelineNumber {
+    background: #6D1E3A;
+    color: white;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    flex-shrink: 0;
+    margin-top: 4px;
+}
+
+/* Eventos */
+.eventTypeCard {
+    display: flex;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #eee !important;
+    transition: transform 0.2s ease;
+}
+
+.eventTypeCard:hover {
+    transform: translateY(-3px);
+    border-color: #6D1E3A !important;
+}
+
+.emoji {
+    font-size: 2rem;
+}
+
+.customChip {
+    background-color: #f3e9e2 !important;
+    color: #6D1E3A !important;
+    font-weight: 600;
+}
+
+/* CTA */
+.ctaBox {
+    margin-top: 3rem;
+    padding: 2rem;
+    background: #6D1E3A;
+    color: white;
+    border-radius: 1rem;
+    text-align: center;
+}
+
+.primaryBtn {
+    display: inline-block;
+    margin-top: 1.5rem;
+    padding: 0.8rem 2rem;
+    background: #ECA121;
+    color: #6D1E3A;
+    text-decoration: none;
+    border-radius: 0.5rem;
+    font-weight: 700;
+    transition: opacity 0.2s;
+}
+
+/* FAQ */
+
+.customAccordion {
+    margin-bottom: 0.5rem;
+    background-color: #f9dbbd !important;
+
+}
+
+
+@media (max-width: 600px) {
+    .rulesGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .serviceSection {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width:900px) {
+
+    .mainTitle {
+        margin: 2rem;
+    }
+
+    .heroSubtitle {
+
+        padding-top: 2rem;
+        padding-left: 4rem;
+        padding-right: 4rem;
+    }
+}
+
+@media(min-width:901px) {
+    .ctaBoxP {
+        margin-top: 30.5rem;
+
+    }
+}
+
+@media(min-width:1201px) {
+    .ctaBoxP {
+        margin-top: 33rem;
+
+    }
+}
+
+@media(min-width:1536px) {
+    .ctaBoxP {
+        margin-top: 30.5rem;
+
+    }
+}

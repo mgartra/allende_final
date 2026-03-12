@@ -1,0 +1,129 @@
+/* app/(auth)/login/Login.module.css */
+
+.container {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f9dbbd;
+    padding: 1rem;
+}
+
+.card {
+
+    background: white;
+    border-radius: 12px;
+    padding: 2.5rem;
+    width: 100%;
+    max-width: 60rem;
+    max-height: 60rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+
+}
+
+.title {
+    font-family: 'Lora', serif;
+    color: #6d1e3a;
+    font-size: 2.8rem;
+    margin: 1rem;
+    text-align: center;
+}
+
+.subtitle,
+.register {
+    color: #120104;
+    /* Verde azulado */
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+}
+
+.error {
+    background-color: #f9dbbd;
+    color: #B00020;
+    padding: 0.75rem;
+    border-radius: 6px;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.label {
+    margin-top: 1rem;
+    display: block;
+    color: #120104;
+    font-weight: 500;
+    margin-bottom: 0.4rem;
+    font-size: 1.4rem;
+}
+
+.input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #d0c8b9;
+    border-radius: 8px;
+    font-size: 1.4rem;
+    background-color: #faf8f5;
+    transition: border-color 0.2s;
+}
+
+.input:focus {
+    outline: none;
+    border-color: #6D1E3A;
+}
+
+.button {
+    background-color: #6D1E3A;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 0.75rem;
+    font-size: 1.4rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.button:hover:not(:disabled) {
+    background-color: #6D1E3A;
+}
+
+.button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+@media(max-width:900px) {
+    .container {
+        height: auto;
+    }
+
+ /*   .card {
+
+        max-width: 40rem;
+        margin-bottom: 14rem;
+    }*/
+
+    .title {
+        font-size: 2rem;
+        margin: 1rem;
+    }
+
+    .subtitle,
+    .register {
+        color: #120104;
+        text-align: center;
+        padding-top: 1rem;
+    }
+
+    .label {
+        font-size: 1.2rem;
+    }
+}
+

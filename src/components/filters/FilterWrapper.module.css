@@ -1,0 +1,175 @@
+/* /app/components/filters/FilterWrapper.module.css */
+
+/* ============================================================================
+   FILTER - Colores sincronizados con theme.ts
+   ============================================================================ */
+.wrapper {
+    width: 100%;
+    max-width: 1400px;
+    min-height: 80vh;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+/* Loading */
+.loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 1rem;
+    text-align: center;
+    min-height: 200px;
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid rgba(117, 20, 5, 0.2);
+    border-top: 3px solid #6D1E3A;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 1rem;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.loading p {
+    color: #333;
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+/* Error */
+.error {
+    background: #ffebee;
+    border-left: 4px solid #B00020;
+    padding: 1.25rem 1.5rem;
+    border-radius: 0 8px 8px 0;
+    margin: 1.5rem 0;
+}
+
+.error p {
+    color: #B00020;
+    margin: 0;
+    font-weight: 500;
+    font-size: 1.05rem;
+}
+
+/* Results */
+.results {
+    margin-top: 2rem;
+}
+
+.resultsHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.75rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid #eee;
+}
+
+.resultsTitle {
+    font-size: 1.875rem;
+    color: #333;
+    margin: 0;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+/* Clear button */
+.clearButton {
+    background: linear-gradient(135deg, #6D1E3A 0%, #5d0e01 100%);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 10px rgba(117, 20, 5, 0.3);
+}
+
+.clearButton:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(117, 20, 5, 0.4);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .wrapper {
+        padding: 0 1rem;
+    }
+
+    .resultsHeader {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1rem;
+    }
+
+    .resultsTitle {
+        font-size: 1.625rem;
+        text-align: center;
+    }
+
+    .clearButton {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+
+/* Scroll infinito */
+.sentinel {
+    height: 20px;
+    width: 100%;
+}
+
+.infiniteLoading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 0;
+    text-align: center;
+}
+
+.infiniteLoading p {
+    color: #333;
+    font-size: 1.1rem;
+    margin-top: 1rem;
+}
+
+/* Mensaje final 
+.endMessage {
+    text-align: center;
+    padding: 2.5rem 1.5rem;
+    background: linear-gradient(135deg, #fff9f5 0%, #fff3e9 100%);
+    border-radius: 12px;
+    margin: 2rem 0;
+    border: 1px dashed #6D1E3A;
+}
+
+.endMessage p:first-child {
+    font-size: 1.5rem;
+    color: #6D1E3A;
+    font-weight: 700;
+    margin: 0 0 0.5rem 0;
+}
+
+.endMessage p:last-child {
+    color: #333;
+    font-size: 1.1rem;
+}*/

@@ -1,0 +1,123 @@
+/* /src/app/components/cards/CategoryGrid*/
+
+/* ============================================================================
+  Categories card - Colores sincronizados con theme.ts
+   ============================================================================ */
+   
+.card {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 3rem;      
+    padding: 2rem 0;
+    justify-content: flex-start; 
+}
+
+/* Tarjeta individual */
+.iconWrapper {
+    background-color: var(--background-paper);
+    border-radius: 1rem; 
+    border-bottom: 3px solid #e0d6c9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3rem;
+    transition: all 0.4s ease;
+    
+    /* CÁLCULO PARA 3 COLUMNAS:
+       (100% / 3) menos el proporcional del gap para que quepan exactas */
+    flex: 0 1 calc(33.333% - 2rem); 
+    min-width: 25rem; 
+    box-sizing: border-box;
+}
+
+
+
+
+.mainIcon {
+    width: 8rem;
+    height: 8rem;
+    background-color: var(--color-primary);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2.5rem;
+    transition: all 0.3s ease;
+}
+
+
+
+/* Cuerpo de la tarjeta */
+.contain {
+    flex-grow: 1;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.categoryName {
+    font-family: var(--font-lora), serif;
+    font-size: 2.2rem;
+    color: var(--color-text);
+    
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.categoryDescription {
+    font-family: var(--font-inter), sans-serif;
+    font-size: 1.5rem;
+    color: var(--color-text);
+    opacity: 0.8;
+    line-height: 1.6;
+}
+
+/* Botón Outlined */
+.iconWrapper :global(.MuiButton-outlined) {
+    align-self: center;
+    border-radius: 1rem;
+    padding: 0.8rem 2rem;
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+    font-size: 1.3rem;
+    font-weight: 600;
+    transition: all 0.3s ease-in-out;
+}
+
+/* RESPONSIVIDAD CON FLEX */
+
+/* Móviles (1 tarjeta por fila) */
+@media (max-width: 599px) {
+    .iconWrapper {
+        flex: 0 1 100%; /* 1 tarjeta por fila */
+    }
+ 
+    .card {
+        gap: 2rem;
+    }
+}
+
+/* Tablets y Desktops pequeños (2 tarjetas por fila si el espacio se reduce mucho) */
+@media (min-width: 601px) and (max-width:900px) {
+    .iconWrapper {
+        flex: 0 1 calc(50% - 1.5rem); /* 2 tarjetas por fila */
+    }
+}
+
+@media (min-width:900px){
+.iconWrapper:hover {
+    border-bottom-color: var(--color-primary);
+    transform: translateY(-5px);
+    background-color: #fdfdfd; /* Un ligero cambio de tono al hover */
+}
+
+.iconWrapper:hover .mainIcon {
+    transform: scale(1.1);
+    box-shadow: 0 4px 15px rgba(117, 20, 5, 0.3);
+}
+
+.iconWrapper:hover :global(.MuiButton-outlined) {
+    background-color: var(--color-primary); 
+    color: #f2f0eb;                         
+  
+}
+}

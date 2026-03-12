@@ -1,0 +1,81 @@
+/* src/app/components/topButton/TopButton.module.css */
+
+/* ==========================================================================
+TOP BUTTON - Colores sincronizados con theme.ts
+   ========================================================================== */
+
+.backToTop {
+    position: fixed;
+    visibility: hidden;
+    opacity: 0;
+    right: 15px;
+    bottom: 15px;
+    z-index: 996;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    border: 2px solid var(--color-primary);
+    background-color: var(--background-paper);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+}
+
+.backToTop .icon {
+    width: 28px;
+    height: 28px;
+    color: var(--color-primary, #6D1E3A);
+    transition: color 0.3s ease-in-out;
+}
+
+.backToTop.active {
+    visibility: visible;
+    opacity: 1;
+}
+
+
+/* ==========================================================================
+ESTADO: Focus Visible - Accesibilidad teclado (todos los dispositivos)
+   ========================================================================== */
+.backToTop:focus-visible {
+    outline: 2px solid var(--color-secondary, #ECA121);
+    outline-offset: 2px;
+}
+
+/* ==========================================================================
+RESPONSIVE
+   ========================================================================== */
+@media (max-width: 480px) {
+    .backToTop {
+        right: 10px;
+        bottom: 10px;
+        width: 40px;
+        height: 40px;
+    }
+
+    .backToTop .icon {
+        width: 24px;
+        height: 24px;
+    }
+}
+
+@media (min-width:900px) {
+    .backToTop.active {
+        visibility: visible;
+        opacity: 1;
+        transform: scale(0.95);
+    }
+
+    .backToTop:hover {
+        background-color: var(--color-accent, #BA97DF);
+        border-color: var(--color-accent, #BA97DF);
+    }
+
+    .backToTop:hover .icon {
+        color: #FFFFFF;
+    }
+}

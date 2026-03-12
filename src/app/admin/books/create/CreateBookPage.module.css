@@ -1,0 +1,194 @@
+/* app/admin/books/create/CreateBookPage.module.css */
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    min-height: 100vh;
+    background-color: #f8f9fa;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 2px solid #6D1E3A;
+}
+
+.header h1 {
+    color: #6D1E3A;
+    font-size: 2rem;
+    margin: 0;
+}
+
+.backLink {
+    color: #6D1E3A;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border: 2px solid #6D1E3A;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.backLink:hover {
+    background-color: #6D1E3A;
+    color: white;
+}
+
+.content {
+    background: white;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.formGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.formGroup label {
+    font-weight: 600;
+    color: #333;
+}
+
+.input {
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1.4rem;
+    transition: border-color 0.3s ease;
+}
+
+.input:focus {
+    outline: none;
+    border-color: #6D1E3A;
+}
+
+.formActions {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+    margin-top: 1rem;
+}
+
+.cancelButton,
+.saveButton {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.cancelButton {
+    background-color: #e0e0e0;
+    color: #333;
+}
+
+.cancelButton:hover:not(:disabled) {
+    background-color: #bdbdbd;
+}
+
+.cancelButton:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.saveButton {
+    background-color: #6D1E3A;
+    color: white;
+}
+
+.saveButton:hover:not(:disabled) {
+    background-color: #6D1E3A;
+}
+
+.saveButton:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+
+.unauthorized {
+    max-width: 600px;
+    margin: 4rem auto;
+    text-align: center;
+    padding: 2rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.unauthorized h1 {
+    color: #B00020;
+    margin-bottom: 1rem;
+}
+
+.homeLink {
+    display: inline-block;
+    margin-top: 1.5rem;
+    color: #6D1E3A;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border: 2px solid #6D1E3A;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.homeLink:hover {
+    background-color: #6D1E3A;
+    color: white;
+}
+
+/* Spinner de carga */
+.spinner {
+    border: 2px solid #f3f3f3;
+    border-top: 2px solid #6D1E3A;
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+    animation: spin 1s linear infinite;
+    display: inline-block;
+    margin-right: 8px;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .formGroup {
+        flex-direction: column;
+    }
+
+    .formActions {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .cancelButton,
+    .saveButton {
+        width: 100%;
+    }
+}
+

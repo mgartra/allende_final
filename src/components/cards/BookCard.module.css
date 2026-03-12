@@ -1,0 +1,139 @@
+/* /app/components/cards/BookCard.module.css */
+
+/* ============================================================================
+BOOKCARD  - Colores sincronizados con theme.ts
+   ============================================================================ */
+.bookCard {
+   display: flex;
+  flex-direction: column;
+  border-radius: 12px;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s, box-shadow 0.2s;
+  height: 100%;
+}
+
+
+.imageContainer {
+    position: relative;
+    height: 28rem;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Marcador TOP/NEW */
+.marcapaginas {
+    position: absolute;
+    top: -10px;
+    right: 20px;
+    width: 50px;
+    height: 70px;
+    background-color:#6D1E3A;
+    color: white;
+    text-align: center;
+    padding-top: 10px;
+    font-weight: bold;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Triángulo inferior para efecto de corte */
+.marcapaginas::after {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    border-top: 20px solid #6D1E3A;
+
+}
+
+/* Variante NEW - Verde */
+.marcapaginas.new {
+    background-color: #014421;
+}
+
+.marcapaginas.new::after {
+    border-top: 20px solid #014421;
+}
+
+/* Texto del marcador */
+.badgeText {
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+
+.bookImage {
+    width: 100%;
+    height: 100%;
+    margin-top: 2.5rem;
+    object-fit: cover !important;
+    object-position: center;
+    transition: transform 0.3s ease;
+}
+
+.bookContent {
+    max-height: 100%;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 1.5rem;
+    text-align: center;
+}
+.bookCategory,
+.bookAuthor,
+.bookTitle{
+     overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 100%;
+}
+/* Responsive */
+@media (max-width: 900px) {
+    .bookmark {
+        width: 48px;
+        height: 48px;
+        top: -10px;
+        right: 12px;
+    }
+
+    .badgeText {
+        font-size: 0.65rem;
+    }
+
+    .bookImage {
+        height: 200px;
+    }
+}
+
+@media (min-width: 1025px) {
+    .bookImage {
+        height: 280px;
+    }
+}
+
+
+
+@media (min-width:901px){
+     .bookCard:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    }
+
+    .bookCard:hover .bookImage {
+        transform: scale(1.03);
+    }
+    
+}

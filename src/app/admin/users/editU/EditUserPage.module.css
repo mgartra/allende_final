@@ -1,0 +1,507 @@
+/* src/app/admin/users/edit/EditUserPage.module.css */
+
+.container {
+        max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    min-height: 100vh;
+    background-color: #f8f9fa;
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 2px solid #6D1E3A;
+}
+
+.backLink {
+    color: #6D1E3A !important;
+    text-decoration: none !important;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.2s;
+}
+
+.backLink:hover {
+    color: #5a0f03 !important;
+    transform: translateX(-2px);
+}
+.form {
+    background: white;
+    border-radius: 12px;
+    padding: 32px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    max-width: 800px;
+    margin: 0 auto 40px;
+}
+
+.formGroup {
+    margin-bottom: 24px;
+}
+
+.formGroup label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #333;
+    font-size: 16px;
+}
+
+.input {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: all 0.2s;
+    background-color: white;
+}
+
+.input:focus {
+    outline: none;
+    border-color: #6D1E3A;
+    box-shadow: 0 0 0 3px rgba(117, 20, 5, 0.1);
+}
+
+.input:disabled {
+    background-color: #f5f5f5;
+    cursor: not-allowed;
+    opacity: 0.8;
+}
+
+.helpText {
+    color: #333;
+    margin-top: 6px;
+    display: block;
+    font-style: italic;
+}
+
+.formActions {
+    display: flex;
+    gap: 16px;
+    margin-top: 32px;
+    justify-content: flex-end;
+}
+
+.cancelButton,
+.saveButton {
+    padding: 10px 24px;
+    border-radius: 6px;
+    font-weight: 500;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.2s;
+    border: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.cancelButton {
+    background-color: #f5f5f5;
+    color: #555;
+}
+
+.cancelButton:hover:not(:disabled) {
+    background-color: #e0e0e0;
+    transform: translateY(-1px);
+}
+
+.cancelButton:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.saveButton {
+    background-color: #6D1E3A;
+    color: white;
+}
+
+.saveButton:hover:not(:disabled) {
+    background-color: #5a0f03;
+    transform: translateY(-1px);
+}
+
+.saveButton:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Radio buttons mejorados */
+.radioGroup {
+    display: flex;
+    gap: 24px;
+    margin-top: 8px;
+    flex-wrap: wrap;
+}
+
+.radioLabel {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    padding: 12px 18px;
+    border-radius: 8px;
+    background-color: #f8f9fa;
+    border: 2px solid #e0e0e0;
+    transition: all 0.2s;
+    min-width: 180px;
+    position: relative;
+}
+
+.radioLabel:hover {
+    border-color: #6D1E3A;
+    background-color: #fff8f7;
+}
+
+.radioLabel input[type="radio"] {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    accent-color: #6D1E3A;
+    margin: 0;
+}
+
+.radioLabel input[type="radio"]:checked {
+    accent-color: #6D1E3A;
+}
+
+.radioLabel input[type="radio"]:checked+.radioText {
+    font-weight: 600;
+    color: #6D1E3A;
+}
+
+.radioText {
+    font-size: 16px;
+    color: #555;
+    font-weight: 500;
+}
+
+/* Sección de préstamos */
+.loansSection {
+    background: white;
+    border-radius: 12px;
+    padding: 32px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    margin-top: 20px;
+}
+
+.sectionTitle {
+    color: #333;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.tableContainer {
+    overflow-x: auto;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+}
+
+.loansTable {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 600px;
+}
+
+.loansTable th {
+    background-color: #f8f9fa;
+    padding: 16px 12px;
+    text-align: left;
+    font-weight: 600;
+    color: #333;
+    border-bottom: 2px solid #e0e0e0;
+}
+
+.loansTable td {
+    padding: 14px 12px;
+    border-bottom: 1px solid #f0f0f0;
+    color: #555;
+}
+
+.loansTable tr:hover td {
+    background-color: #f9f9f9;
+}
+
+
+
+
+.actionsCell {
+    text-align: right;
+    min-width: 120px;
+}
+
+.returnButton {
+    background-color: #014421;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 14px;
+    transition: all 0.2s;
+}
+
+.returnButton:hover {
+    background-color: #1b5e20;
+    transform: translateY(-1px);
+}
+
+.returnButton:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Estados especiales */
+.loadingState {
+    text-align: center;
+    padding: 40px 20px;
+    color: #333;
+}
+
+.spinner {
+    width: 32px;
+    height: 32px;
+    border: 3px solid rgba(117, 20, 5, 0.3);
+    border-top: 3px solid #6D1E3A;
+    border-radius: 50%;
+    margin: 0 auto 16px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.errorState {
+    text-align: center;
+    padding: 40px 20px;
+    color: #B00020;
+    background-color: #ffebee;
+    border-radius: 8px;
+    border: 1px solid #ffcdd2;
+}
+
+.retryButton {
+    background-color: #B00020;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    margin-top: 16px;
+    transition: all 0.2s;
+}
+
+.retryButton:hover {
+    background-color: #b71c1c;
+}
+
+.emptyState {
+    text-align: center;
+    padding: 40px 20px;
+    color: #999;
+    border: 1px dashed #e0e0e0;
+    border-radius: 8px;
+    background-color: #fafafa;
+}
+
+.infoNote {
+    display: flex;
+    gap: 10px;
+    background-color: #e8f5e9;
+    border-left: 4px solid #4caf50;
+    padding: 16px;
+    margin-top: 24px;
+    border-radius: 0 8px 8px 0;
+    align-items: flex-start;
+}
+
+.infoNote svg {
+    color: #4caf50;
+    font-size: 24px;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .container {
+        padding: 16px 0;
+    }
+
+    .form {
+        padding: 24px;
+        margin-bottom: 32px;
+    }
+
+    .formGroup label {
+        font-size: 15px;
+    }
+
+    .input {
+        padding: 10px 14px;
+        font-size: 15px;
+    }
+
+    .radioGroup {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .radioLabel {
+        min-width: auto;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .formActions {
+        flex-direction: column-reverse;
+        gap: 12px;
+    }
+
+    .cancelButton,
+    .saveButton {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .loansSection {
+        padding: 24px;
+        margin-top: 16px;
+    }
+
+    .sectionTitle {
+        font-size: 24px;
+    }
+
+    .loansTable {
+        font-size: 14px;
+    }
+
+    .loansTable th,
+    .loansTable td {
+        padding: 10px 8px;
+    }
+
+    .actionsCell {
+        min-width: 100px;
+    }
+
+    .returnButton {
+        padding: 5px 10px;
+        font-size: 13px;
+    }
+
+    .infoNote {
+        flex-direction: column;
+        text-align: center;
+        padding: 16px;
+    }
+}
+
+/* Estados de foco para accesibilidad */
+.input:focus-visible {
+    outline: 2px solid #6D1E3A;
+    outline-offset: 2px;
+    border-color: #6D1E3A;
+}
+
+.radioLabel input[type="radio"]:focus-visible {
+    outline: 2px solid #6D1E3A;
+    outline-offset: 2px;
+}
+
+.returnButton:focus-visible {
+    outline: 2px solid #014421;
+    outline-offset: 2px;
+}
+
+/* Modo oscuro (opcional) */
+@media (prefers-color-scheme: dark) {
+
+    .form,
+    .loansSection {
+        background: #1e1e1e;
+        color: #e0e0e0;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    .input {
+        background-color: #2d2d2d;
+        border-color: #444;
+        color: #e0e0e0;
+    }
+
+    .input:focus {
+        border-color: #6D1E3A;
+        box-shadow: 0 0 0 3px rgba(165, 42, 42, 0.2);
+    }
+
+    .loansTable th {
+        background-color: #252525;
+        color: #e0e0e0;
+        border-bottom-color: #444;
+    }
+
+    .loansTable td {
+        color: #ccc;
+        border-bottom-color: #333;
+    }
+
+    .loansTable tr:hover td {
+        background-color: #2a2a2a;
+    }
+
+    .radioLabel {
+        background-color: #252525;
+        border-color: #444;
+    }
+
+    .radioLabel:hover {
+        border-color: #6D1E3A;
+        background-color: #2d1b1b;
+    }
+
+    .radioText {
+        color: #ccc;
+    }
+
+    .radioLabel input[type="radio"]:checked+.radioText {
+        color: #6D1E3A;
+    }
+
+    .emptyState,
+    .loadingState {
+        background-color: #252525;
+        border-color: #444;
+        color: #ccc;
+    }
+
+    .errorState {
+        background-color: #2d1b1b;
+        border-color: #5d1b1b;
+        color: #ffcdd2;
+    }
+
+    .infoNote {
+        background-color: #1b2a1b;
+        border-left-color: #4caf50;
+    }
+}

@@ -1,0 +1,125 @@
+.mainWrapper {
+    background-color: #f9dbbd;
+    color: #333;
+}
+
+/* HERO */
+.hero {
+     text-align: center;
+    padding: 5rem 1rem 4rem;
+    background: #f9dbbd;
+}
+
+.mainTitle{
+     color: var(--color-primary) !important;
+}
+.label {
+   color: var(--color-primary) !important;
+    font-weight: 700;
+    letter-spacing: 0.15rem;
+}
+
+
+
+.heroDescription {
+    color: var(--color-text);
+    text-align: center;
+    max-width: 60rem;
+    margin: auto !important;
+
+}
+
+
+
+/* CONTENT GRID */
+.contentGrid {
+    padding: 6rem 0;
+}
+
+.stickyInfo {
+    position: sticky;
+    top: 2rem;
+}
+
+.sectionTitle {
+    margin-bottom: 3rem !important;
+    font-weight: 700 !important;
+}
+
+.infoList {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+.infoItem {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+}
+
+.iconCircle {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--color-primary) !important;;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.infoText h6 {
+    font-weight: 700;
+    margin-bottom: 0.3rem;
+}
+
+.infoText p {
+    color: #333;
+    margin: 0;
+}
+
+/* FORM CARD */
+.formCard {
+    background: white;
+    padding: 4rem;
+    border-radius: 2rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+}
+
+/* MAPA */
+.mapContainer {
+    position: relative;
+    margin-top: 4rem;
+}
+
+.mapOverlay {
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    background: white;
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    z-index: 10;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    border-left: 4px solid #6d1e3a;
+}
+
+@media (max-width: 900px) {
+    .formCard { padding: 2rem; }
+    .hero { text-align: center; }
+    .scrollBadge { justify-content: center; }
+
+      .mainTitle{
+        margin: 2rem;
+    }
+
+    .heroDescription {
+      
+padding-top: 2rem;
+        padding-left: 4rem;
+        padding-right: 4rem;
+    }
+}
+

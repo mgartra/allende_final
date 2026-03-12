@@ -1,0 +1,98 @@
+/* ============================================================================
+  GLOBAL CSS 
+  NOTA: Colores, fuentes y breakpoints están en theme.ts
+   ============================================================================ */
+
+:root {
+  /* ==========================================================================
+    VARIABLES SOLO PARA LIBRERÍAS EXTERNAS
+ ========================================================================== */
+
+  /* Colores del Sistema de Diseño */
+  --color-primary: #6D1E3A;
+  --color-secondary: #ECA121;
+  --color-accent: #010244;
+  --background-paper: #FFFFFF;
+  --background-default: #f9dbbd;
+  --color-text: #120104;
+
+  /* Sonner Toast */
+  --toast-background: #f9dbbd;
+  --toast-text: #120104;
+  --toast-success:#014421;
+  --toast-warning:#FF9800;
+  --toast-error:#B00020;
+  --toast-info:#010244;
+
+
+  /* ==========================================================================
+    COMPORTAMIENTO GLOBAL
+     ========================================================================== */
+
+  scroll-behavior: smooth;
+}
+
+
+
+html {
+  font-size: 62.5%;
+  /* 1rem = 10px */
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+/* ============================================================================
+  BODY - MUI CssBaseline controla color y font-family
+   ============================================================================ */
+
+body {
+  min-height: 100vh;
+  /* Las variables de body lo controla theme.ts a través de CssBaseline */
+}
+
+/* ============================================================================
+  ENLACES
+   ============================================================================ */
+
+a {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+  a:hover {
+    text-decoration: none;
+  }
+
+
+/* ============================================================================
+  LISTAS
+   ============================================================================ */
+
+ul,
+ol {
+  list-style: none;
+}
+
+li {
+  text-decoration: none;
+}
+
+/* ============================================================================
+  IMÁGENES
+   ============================================================================ */
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+

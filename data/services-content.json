@@ -1,0 +1,128 @@
+{
+    "loans": {
+        "rules": [
+            {
+                "icon": "access_time",
+                "title": "Plazo de préstamo",
+                "description": "14 días para libros físicos, 21 días para materiales digitales"
+            },
+            {
+                "icon": "attach_money",
+                "title": "Multas",
+                "description": "0.20€/día por retraso (máximo 10€)"
+            },
+            {
+                "icon": "check_circle",
+                "title": "Renovaciones",
+                "description": "Hasta 2 renovaciones si no hay reserva"
+            },
+            {
+                "icon": "warning",
+                "title": "Pérdidas",
+                "description": "Reposición del libro o pago del valor + 5€ de gestión"
+            }
+        ],
+        "steps": [
+            {
+                "step": 1,
+                "title": "Selecciona",
+                "description": "Elige tus libros en la biblioteca o reserva online"
+            },
+            {
+                "step": 2,
+                "title": "Solicita",
+                "description": "Presenta tu carné de usuario en el mostrador"
+            },
+            {
+                "step": 3,
+                "title": "Recoge",
+                "description": "Recibe tus libros con el comprobante de préstamo"
+            },
+            {
+                "step": 4,
+                "title": "Devuelve",
+                "description": "Entrega en cualquier punto de devolución antes de la fecha límite"
+            }
+        ]
+    },
+    "events": {
+        "types": [
+            {
+                "title": "Charlas literarias",
+                "description": "Encuentros con autores y debates sobre obras destacadas",
+                "icon": "menu",
+                "capacity": "20-50 personas",
+                "duration": "1.5-2 horas"
+            },
+            {
+                "title": "Talleres infantiles",
+                "description": "Actividades creativas para niños de 6 a 12 años",
+                "icon": "palette",
+                "capacity": "15-25 niños",
+                "duration": "1 hora"
+            },
+            {
+                "title": "Exposiciones",
+                "description": "Muestras culturales y artísticas en nuestras salas",
+                "icon": "photo",
+                "capacity": "Acceso libre",
+                "duration": "1-4 semanas"
+            },
+            {
+                "title": "Club de lectura",
+                "description": "Grupos de discusión mensual sobre libros seleccionados",
+                "icon": "diversity",
+                "capacity": "8-15 personas",
+                "duration": "2 horas"
+            }
+        ],
+        "requirements": [
+            {
+                "icon": "calendar_today",
+                "title": "Antelación",
+                "description": "Solicitar con mínimo 30 días de antelación"
+            },
+            {
+                "icon": "people",
+                "title": "Capacidad",
+                "description": "Máximo 100 personas por evento (según sala)"
+            },
+            {
+                "icon": "location_on",
+                "title": "Espacios",
+                "description": "Sala polivalente, auditorio o zona infantil"
+            },
+            {
+                "icon": "local_library",
+                "title": "Contenido",
+                "description": "Actividades culturales alineadas con nuestra misión"
+            }
+        ]
+    },
+    "faqs": [
+        {
+            "question": "¿Puedo renovar un préstamo online?",
+            "answer": "Sí, puedes renovar hasta 2 veces a través de tu cuenta de usuario, siempre que no haya reservas pendientes para ese libro. Accede a \"Mis préstamos\" en tu panel de usuario y haz clic en \"Renovar\"."
+        },
+        {
+            "question": "¿Hay límite de edad para organizar eventos?",
+            "answer": "Los organizadores deben ser mayores de 18 años. Para eventos infantiles, debe haber un adulto responsable presente durante toda la actividad. Los menores de 16 años deben estar acompañados por un adulto en todos los eventos."
+        },
+        {
+            "question": "¿Qué pasa si devuelvo un libro con retraso?",
+            "answer": "Se aplicará una multa de 0.20€ por día de retraso (máximo 10€). No podrás realizar nuevos préstamos hasta regularizar tu situación. Las multas se pueden abonar en el mostrador de la biblioteca."
+        },
+        {
+            "question": "¿Puedo organizar un evento sin ser autor?",
+            "answer": "¡Claro! Aceptamos propuestas de clubes de lectura, talleres, exposiciones y cualquier actividad cultural que enriquezca nuestra comunidad. Solo necesitas presentar una propuesta detallada y cumplir con nuestros requisitos básicos."
+        },
+        {
+            "question": "¿Cómo recupero mi carné si lo pierdo?",
+            "answer": "Debes acudir al mostrador de la biblioteca con tu DNI para solicitar un duplicado. El coste es de 3€ para cubrir gastos administrativos. El nuevo carné se emitirá en el acto."
+        },
+        {
+            "question": "¿Puedo donar libros a la biblioteca?",
+            "answer": "Aceptamos donaciones de libros en buen estado y de interés cultural. Los libros serán evaluados por nuestro equipo técnico y, si son aceptados, se incorporarán al fondo bibliográfico con una placa de agradecimiento al donante."
+        }
+    ]
+}

@@ -1,0 +1,81 @@
+/* src/components/SectionTitle.module.css */
+
+.section-title {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 8px;
+    padding: 1rem 0;
+    margin: 2rem;
+    margin-top: 3rem;
+}
+
+
+.contain {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-family: var(--font-lora, 'Lora', serif);
+}
+
+.contain h2 {
+    font-size: 2.8rem;
+    margin: 0;
+    color: #6D1E3A;
+
+    /* Texto oscuro para fondos claros */
+}
+
+.contain p {
+    font-size: 1.8rem;
+    margin: -7px 0 0 0;
+    color: #333;
+    max-width: 1600px;
+}
+
+/* Estilos para cuando está sobre imagen (onImage=true) */
+.section-title--on-image .contain h2 {
+    color: white;
+    /* ✅ Texto blanco para fondos oscuros */
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.section-title--on-image .contain p {
+    color: rgba(255, 255, 255, 0.9);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .section-title {
+        margin: 1rem;
+        margin-top: 2rem;
+        gap: 12px;
+    }
+
+    .contain h2 {
+        font-size: 2rem; 
+    }
+
+    .contain p {
+        font-size: 1.4rem; 
+    }
+}
+
+@media (max-width: 600px) {
+    .section-title {
+        margin: 0.5rem;
+        margin-top: 1.5rem;
+    
+    }
+
+    .contain h2 {
+        font-size: 2rem; 
+    }
+
+    .contain p {
+        font-size: 1.4rem;
+        margin-bottom: 0.5rem;
+    }
+}

@@ -1,0 +1,21 @@
+/* src/components/admin/SearchBar.module.css */
+
+.container {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: 24px;
+}
+
+.resultsCount {
+    position: absolute;
+    bottom: -22px;
+    right: 0;
+    font-size: 13px;
+    color: #333;
+    transition: color 0.2s;
+}
+
+.resultsCount[data-found="false"] {
+    color: #B00020;
+}

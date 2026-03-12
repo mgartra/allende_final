@@ -1,0 +1,20 @@
+
+.featuredBooks{
+    width: 100%;
+    height: auto;
+}
+
+.linkCategories{
+
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+@media(max-width:600px){
+    .linkCategories{
+        background-color: #010244!important;
+        color: white;
+    }
+}

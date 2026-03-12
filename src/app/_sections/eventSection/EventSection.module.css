@@ -1,0 +1,19 @@
+.eventsSection{
+     width: 100%;
+    height: auto;
+}
+
+ .linkEvents{
+
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+@media(max-width:600px){
+    .linkEvents{
+        background-color: #010244!important;
+        color: white;
+    }
+}

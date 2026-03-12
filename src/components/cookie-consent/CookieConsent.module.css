@@ -1,0 +1,186 @@
+/* /app/components/cookie-consent/CookieConsent.module.css */
+.banner {
+    position: fixed;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #6D1E3A;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.35);
+    z-index: 9999;
+    width: 95%;
+    max-width: 800px;
+    padding: 1.75rem;
+    border: 1px solid rgba(255, 215, 0, 0.2);
+    animation: slideUp 0.4s ease-out;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translate(-50%, 20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
+}
+
+.closeButton {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    color: white;
+    width: 36px;
+    height: 36px;
+    padding: 4px;
+}
+
+
+
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.title {
+    color: white;
+    font-weight: 800;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+}
+
+.message {
+    color: rgba(255, 255, 255, 0.92);
+    line-height: 1.6;
+    font-size: 0.95rem;
+    max-width: 700px;
+    text-align: center;
+}
+
+.link {
+    color: #ECA121 !important;
+    text-decoration: none !important;
+    font-weight: bold;
+    transition: all 0.2s ease;
+    margin-top: 0.25rem;
+    text-align: center;
+}
+
+
+
+.actions {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 1rem;
+}
+
+.rejectButton,
+.acceptButton {
+    padding: 1.5rem;
+    border-radius: 5rem !important;
+    font-weight: 600;
+    text-transform: none;
+    min-width: 120px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.rejectButton {
+    background: transparent;
+    border: 2px solid white !important;
+    color: white !important;
+    transition: all 0.3s ease;
+}
+
+
+
+.acceptButton {
+    background: #ECA121 !important;
+    color: #6D1E3A !important;
+    font-weight: bold;
+
+}
+
+
+
+/* Responsive */
+@media (max-width: 768px) {
+    .banner {
+        bottom: 1.5rem;
+        width: 92%;
+        padding: 1.5rem;
+    }
+
+    .title {
+        font-size: 1.375rem;
+    }
+
+    .message {
+        font-size: 0.9rem;
+    }
+
+    .actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .rejectButton,
+    .acceptButton {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 600px) {
+    .banner {
+        bottom: 1rem;
+        width: 95%;
+        padding: 1.25rem;
+        border-radius: 16px;
+    }
+
+    .closeButton {
+        top: 0.5rem;
+        right: 0.5rem;
+        width: 32px;
+        height: 32px;
+    }
+
+    .title {
+        font-size: 1.25rem;
+    }
+
+    .message {
+        font-size: 0.875rem;
+    }
+}
+
+@media(min-width:901px) {
+    .link:hover {
+        color: #fff9e0 !important;
+        text-decoration: none !important;
+        transform: translateX(2px);
+    }
+
+    .closeButton:hover {
+        border: 2px solid white;
+
+    }
+
+    .acceptButton:hover {
+
+        background: #6D1E3A !important;
+        color: white !important;
+    }
+
+    .rejectButton:hover {
+        border: none !important;
+    }
+}

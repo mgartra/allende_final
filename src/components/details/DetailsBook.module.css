@@ -1,0 +1,136 @@
+/*src/app/components/details/DetailsBook.module.css*/
+
+/* ============================================================================
+DETAILS BOOK - Colores sincronizados con theme.ts
+   ============================================================================ */
+
+
+.mainGrid {
+    padding: 4rem 0;
+}
+
+.stickyContainer {
+    position: sticky;
+    top: 10rem;
+}
+
+.imageWrapper {
+    position: relative;
+    box-shadow: 2rem 2rem 6rem rgba(0,0,0,0.15);
+    border-radius: 0.4rem;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.bookImage {
+    width: 100%;
+    height: auto;
+    max-width: 36rem;
+    max-height: 480rem;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.availabilityBadge {
+    position: absolute;
+    bottom: 2rem;
+    right: 2rem;
+}
+
+.chipAvailable {
+    background-color: var(--color-secondary) !important;
+    color: #6D1E3A !important;
+    font-weight: 600 !important;
+}
+
+/* Información */
+.title {
+    font-family: var(--font-lora) !important;
+    color: var(--color-primary) !important;
+    margin-bottom: 1rem !important;
+    line-height: 1.1 !important;
+}
+
+.authorName {
+    font-family: var(--font-inter) !important;
+    color: var(--color-text) !important;
+    opacity: 0.7;
+    font-weight: 400 !important;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+}
+
+.tagCloud {
+    margin-top: 2rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.categoryTag {
+    border-color: #e0d6c9 !important;
+    color: var(--color-text) !important;
+}
+
+.synopsis {
+    font-family: var(--font-inter);
+    font-size: 1.8rem;
+    line-height: 1.8;
+    color: var(--color-text);
+    margin-bottom: 4rem !important;
+    max-width: 70ch;
+}
+
+/* Rejilla de especificaciones */
+.specsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    gap: 3rem;
+    background: #f9dbbd;
+    padding: 3rem;
+    border-radius: 1rem;
+}
+
+.specItem {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.specLabel {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    
+    color: var(--color-accent);
+    font-weight: 700;
+}
+
+.specValue {
+    font-size: 1.6rem;
+    font-family: var(--font-lora);
+    color: var(--color-accent);
+}
+
+.actionButton {
+    background-color: var(--color-primary) !important;
+    padding: 1.5rem 6rem !important;
+    font-size: 1.6rem !important;
+    border-radius: 8px !important;
+    text-transform: none !important;
+    box-shadow: 0 1rem 3rem rgba(117, 20, 5, 0.2) !important;
+}
+
+.actionButton:hover {
+    background-color: #400d1f !important;
+}
+
+.customAlert {
+    border-radius: 0 !important;
+    border-left: 4px solid !important;
+}
+
+@media (max-width: 900px) {
+    .mainGrid { padding: 2rem; }
+    .stickyContainer { position: relative; top: 0; margin-bottom: 4rem; }
+    .title { font-size: 3.2rem !important; }
+}

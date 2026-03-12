@@ -1,0 +1,157 @@
+.pageWrapper {
+    background-color: #fcfaf8;
+    min-height: 100vh;
+}
+
+/* HERO SECTION */
+.heroSection {
+    position: relative;
+    height: 60vh;
+    min-height: 400px;
+    display: flex;
+    align-items: flex-end;
+    color: white;
+    overflow: hidden;
+}
+
+.backgroundImage {
+    object-fit: cover;
+    z-index: 0;
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.2) 60%, transparent 100%);
+    z-index: 1;
+}
+
+.heroContainer {
+    position: relative;
+    z-index: 2;
+    padding-bottom: 4rem;
+}
+
+.backLink {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: rgba(255,255,255,0.8);
+    text-decoration: none;
+    font-size: 0.9rem;
+    margin-bottom: 2rem;
+    transition: color 0.3s;
+}
+
+.backLink:hover { color: white; }
+
+.title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    margin: 1rem 0;
+}
+
+.quickMeta {
+    display: flex;
+    gap: 2rem;
+    font-size: 1.1rem;
+    font-weight: 300;
+}
+
+.quickMeta span {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* CONTENT */
+.mainContent {
+    padding: 4rem 0;
+}
+
+.sectionTitle {
+    font-weight: 700 !important;
+    margin-bottom: 1.5rem !important;
+    color: #1a1a1a;
+}
+
+.descriptionText {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #444;
+    margin-bottom: 6rem;
+}
+
+.detailsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.detailCard {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    padding: 1.5rem;
+    background: white;
+    border-radius: 1rem;
+    border: 1px solid #f3e9e2;
+}
+
+.detailIcon { color: #6D1E3A; }
+
+/* SIDEBAR & RESERVATION */
+.sidebarSticky {
+    position: sticky;
+    top: 2rem;
+}
+
+.reservationCard {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 2rem;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+    border: 1px solid #f3e9e2;
+}
+
+.progressBox {
+    margin: 2rem 0;
+}
+
+.progressLabels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.progressBar {
+    height: 8px !important;
+    border-radius: 4px;
+}
+
+.progressHint {
+    font-size: 0.8rem;
+    color: #333;
+    margin-top: 0.8rem;
+}
+
+.actionWrapper :global(button) {
+    width: 100%; /* Forzamos a que el botón de EventActions ocupe todo el ancho */
+    padding: 1rem;
+    font-size: 1.1rem;
+}
+
+.cancelPolicy {
+    font-size: 0.75rem;
+    color: #999;
+    margin-top: 1.5rem;
+    text-align: center;
+    line-height: 1.4;
+}
+
+@media (max-width: 900px) {
+    .heroSection { height: 50vh; }
+    .sidebarSticky { position: static; margin-top: 2rem; }
+}

@@ -1,0 +1,240 @@
+/* app/admin/books/BooksPage.module.css */
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem;
+    min-height: 100vh;
+    background-color: #f9dbbd;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 2px solid #6D1E3A;
+}
+
+
+
+.backLink {
+    color: #6D1E3A;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border: 2px solid #6D1E3A;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.backLink:hover {
+    background-color: #6D1E3A;
+    color: white;
+}
+
+.content {
+    background: white;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.tableWrapper {
+    overflow-x: auto;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+   
+}
+
+.table th {
+    background-color: #6D1E3A;
+    color: white;
+    padding: 1rem;
+    text-align: left;
+    font-weight: 600;
+}
+
+.table td {
+    padding: 1rem;
+    border-bottom: 1px solid #eee;
+}
+
+.table tr:hover {
+    background-color: #f9f9f9;
+}
+
+/* Acciones */
+.actions {
+    display: flex;
+    gap: 0.5rem;
+    padding: 0.5rem 0;
+}
+
+.editButton {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+}
+
+.editButton {
+    background-color: #010244;
+    color: white;
+}
+
+.editButton:hover {
+    background-color: #010244;
+}
+
+.deleteButton {
+    background-color: #B00020;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.deleteButton:hover:not(:disabled) {
+    background-color: #B00020;
+    transform: translateY(-1px);
+}
+
+.deleteButton:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.deleteButton.loading {
+    background-color: #B00020;
+}
+
+.emptyState {
+    text-align: center;
+    padding: 3rem;
+    color: #333;
+}
+
+.emptyState p {
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+.unauthorized {
+    max-width: 600px;
+    margin: 4rem auto;
+    text-align: center;
+    padding: 2rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.unauthorized h1 {
+    color: #B00020;
+    margin-bottom: 1rem;
+}
+
+.homeLink {
+    display: inline-block;
+    margin-top: 1.5rem;
+    color: #6D1E3A;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border: 2px solid #6D1E3A;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.homeLink:hover {
+    background-color: #6D1E3A;
+    color: white;
+}
+
+/* Botón de crear */
+.createButtonContainer {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.createButton {
+    background: #6D1E3A;
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(117, 20, 5, 0.3);
+}
+
+.createButton:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(117, 20, 5, 0.4);
+    background: linear-gradient(135deg, #5d0e01 0%, #4a0a01 100%);
+}
+
+.createButton:active {
+    transform: translateY(0);
+}
+
+/* Header con acciones */
+.headerActions {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+/* Botón de crear */
+.createButton {
+    background: #6D1E3A;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 1rem;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(117, 20, 5, 0.3);
+}
+
+.createButton:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(117, 20, 5, 0.4);
+    background: linear-gradient(135deg, #5d0e01 0%, #4a0a01 100%);
+}
+
+.createButton:active {
+    transform: translateY(0);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .headerActions {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .createButton,
+    .backLink {
+        width: 100%;
+        text-align: center;
+    }
+}

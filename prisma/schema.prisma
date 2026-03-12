@@ -1,0 +1,169 @@
+// prisma/schema.prisma
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+// === Enums ===
+
+enum ReservationStatus {
+  confirmed
+  cancelled
+  unconfirmed
+}
+
+enum LoanStatus {
+  borrowed
+  returned
+  overdue
+}
+
+enum LoanType {
+  physical
+  digital
+}
+
+enum UserType {
+  librarian
+  user
+}
+
+// === Models ===
+
+model Root {
+  root_id   Int    @id @default(autoincrement()) @map("root_id")
+  name      String @db.VarChar(50)
+  last_name String @db.VarChar(100)
+  email     String @unique @db.VarChar(255)
+  phone     String @unique @db.VarChar(9)
+  password  String @db.VarChar(100)  
+
+  @@map("root")
+}
+
+
+model User {
+  user_id           Int      @id @default(autoincrement()) @map("user_id")
+  name              String   @db.VarChar(50)
+  last_name         String   @db.VarChar(100)
+  birth_date        DateTime @db.Date
+  email             String   @unique @db.VarChar(255)
+  password          String   @db.VarChar(100)  
+  phone             String   @unique @db.VarChar(9)
+  registration_date DateTime @default(now())
+  blocked_until     DateTime? @map("blocked_until")
+  user_type         UserType    @default(user)
+
+  event_reservations EventReservation[]
+  loans              Loan[]
+  events             Event[]
+
+  @@map("users")
+}
+
+model Author {
+  author_id   Int    @id @default(autoincrement()) @map("author_id")
+  name        String @db.VarChar(50)
+  last_name   String @db.VarChar(100)
+  nationality String? @db.VarChar(50)
+
+  books       Book[]
+
+  @@map("authors")
+}
+
+model Category {
+  category_id Int    @id @default(autoincrement()) @map("category_id")
+  icon        String? @db.VarChar(50)
+  name        String  @unique @db.VarChar(50)
+  description String? @db.Text
+
+  books       Book[]
+
+  @@map("categories")
+}
+
+model Book {
+  book_id          Int      @id @default(autoincrement()) @map("book_id")
+  image            String?  @db.VarChar(200)
+  title            String   @db.VarChar(200)
+  pdf_url          String?  @db.VarChar(200)
+  isbn             String   @unique @db.VarChar(20)
+  summary          String?  @db.Text
+  publication_year Int?
+  total_copies     Int      @default(0)
+  available_copies Int      @default(0)
+  reference        Int      @default(0)
+  created_at       DateTime @default(now()) @map("created_at")
+
+  authors    Author[]
+  categories Category[]
+  loans      Loan[]
+
+  @@map("books")
+}
+
+model Newsletter {
+  newsletter_id  Int      @id @default(autoincrement()) @map("newsletter_id")
+  email          String   @unique @db.VarChar(255)  
+  is_subscribed  Boolean  @default(true) @map("is_subscribed")
+  subscribed_at  DateTime @default(now()) @map("subscribed_at")
+  unsubscribed_at DateTime? @map("unsubscribed_at")
+  created_at     DateTime @default(now()) @map("created_at")
+
+  @@map("newsletter")
+  @@index([email], name: "newsletter_email_idx")
+  @@index([is_subscribed], name: "newsletter_active_idx")
+}
+
+model Event {
+  event_id      Int         @id @default(autoincrement()) @map("event_id")
+  name          String      @db.VarChar(100)  
+  description   String?     @db.Text
+  image         String?     @db.VarChar(200)
+  event_date    DateTime    @db.Date
+  capacity      Int
+  participants  Int
+  cancelations  Int
+  user_id  Int
+
+  user     User @relation(fields: [user_id], references: [user_id])
+  reservations  EventReservation[]
+
+  @@map("events")
+}
+
+model EventReservation {
+  reservation_id   Int               @id @default(autoincrement()) @map("reservation_id")
+  reservation_date DateTime          @default(now())
+  status           ReservationStatus @default(unconfirmed)
+  user_id          Int
+  event_id         Int
+
+  user  User  @relation(fields: [user_id], references: [user_id])
+  event Event @relation(fields: [event_id], references: [event_id])
+
+  @@unique([user_id, event_id])
+  @@map("event_reservations")
+}
+
+model Loan {
+  loan_id     Int         @id @default(autoincrement()) @map("loan_id")
+  loan_date   DateTime    @default(now())
+  return_date DateTime    @db.Date
+  status      LoanStatus
+  loan_type   LoanType
+
+  user_id     Int
+  book_id     Int
+
+  user User @relation(fields: [user_id], references: [user_id])
+  book Book @relation(fields: [book_id], references: [book_id])
+
+  @@map("loans")
+}

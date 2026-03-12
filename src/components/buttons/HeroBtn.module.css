@@ -1,0 +1,30 @@
+
+
+
+
+
+.btn{
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #fff ;
+    background-color: rgba(var(----color-primary));
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-bottom: 0.5rem;
+    padding-top: 0.5rem;
+    margin-right: 2rem;
+    color: #fff;
+    font-size: 1.4rem;
+    border-radius: 2rem;
+    
+}
+
+
+
+@media(min-width:901px){
+.btn:hover{
+  background-color: var(--color-primary, ) !important;
+    color: white;
+    border: none;
+}
+}

@@ -1,0 +1,408 @@
+/* ============================================================================
+   FOOTER - Colores sincronizados con theme.ts
+   ============================================================================ */
+
+.footer {
+    background-color: var(--color-primary, #6D1E3A);
+    color: #FFFFFF;
+    padding: 3rem 2rem 1.5rem;
+    margin-top: auto;
+    width: 100%;
+
+}
+
+.footerGrid {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* ============================================================================
+   COLUMNA 1: Marca y Logo
+   ============================================================================ */
+
+
+.logo {
+    margin-top: 1rem;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-lora, 'Lora', serif);
+
+}
+
+.brandColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  
+}
+
+
+.title {
+  font-family: var(--font-lora, 'Lora', serif);
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: #FFFFFF;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+
+
+/* ============================================================================
+   TÍTULOS DE COLUMNA
+   ============================================================================ */
+.columnTitle {
+    font-family: var(--font-inter, 'Inter', sans-serif);
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #FFFFFF;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+   
+}
+
+/* ============================================================================
+   ENLACES DEL FOOTER
+   ============================================================================ */
+.linksColumn {
+    display: flex;
+    flex-direction: column;
+   
+}
+
+.footerLink {
+    display: block;
+    color: #FFFFFF;
+    text-decoration: none;
+    padding: 4px 0;
+    font-size: 1.4rem;
+    transition: all 0.2s ease;
+    
+}
+
+
+
+/* ============================================================================
+   REDES SOCIALES
+   ============================================================================ */
+.socialLinks {
+    display: flex;
+    gap: 1.5rem;
+    width: 100%;
+    
+}
+
+.socialIcon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #FFFFFF;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+
+
+/* ============================================================================
+   CONTACTO
+   ============================================================================ */
+.contactInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.contactItem {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.4rem;
+}
+
+.contactIcon {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    flex-shrink: 0;
+}
+
+.phoneLink,
+.emailLink {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+
+
+/* ============================================================================
+   COPYRIGHT BAR
+   ============================================================================ */
+
+.copyrightBar {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.copyright {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1.3rem;
+}
+
+/* ============================================================================
+   RESPONSIVE
+   ============================================================================ */
+
+
+
+@media (max-width: 600px) {
+    .footer {
+        padding: 1.5rem 1rem 0.8rem;
+    }
+
+    .logo {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .brandColumn,
+    .linksColumn,
+    .columnTitle {
+        align-items: center;
+        text-align: center;
+    }
+
+    .columnTitle {
+        margin-left: 1rem;
+
+    }
+
+    .socialLinks {
+        justify-content: center;
+    }
+
+    .contactInfo {
+        align-items: center;
+        text-align: center;
+    }
+
+    .copyrightBar {
+
+        margin: 1rem;
+    }
+
+    .copyright {
+        font-size: 1rem;
+
+    }
+}
+
+@media (max-width: 900px) {
+    .footer {
+        padding: 2rem 3rem 1rem;
+
+    }
+
+    .columnTitle {
+        font-size: 1.2rem;
+
+    }
+
+    .linksColumn,
+    .socialColumn,
+    .contactColumn {
+        text-align: center;
+    }
+
+    .socialLinks {
+        justify-content: center;
+    }
+
+    .contactInfo {
+        text-align: center;
+        padding-top: 1rem;
+        padding-bottom: 0;
+    }
+
+    .footerLink,
+    .contactItem,
+    .brandDescription {
+        font-size: 1.3rem;
+    }
+
+    
+@media (hover: hover) {
+  .title:hover {
+    opacity: 0.8;
+  }
+}
+
+@media (hover: none) {
+  .title:active {
+    opacity: 0.8;
+  }
+}
+
+    /* Hover solo desktop */
+@media (hover: hover) {
+    .footerLink:hover {
+        color: var(--color-accent, #BA97DF);
+        text-decoration: underline;
+    }
+}
+
+@media (hover: none) {
+    .footerLink:active {
+        color: var(--color-accent, #BA97DF);
+    }
+}
+
+/* Focus para accesibilidad  */
+.footerLink:focus-visible {
+    outline: 2px solid var(--color-secondary, #ECA121);
+    outline-offset: 2px;
+}
+
+/* Hover solo desktop */
+@media (hover: hover) {
+    .socialIcon:hover {
+        background-color: var(--color-accent, #BA97DF);
+        transform: translateY(-3px);
+    }
+}
+
+/* Active para touch */
+@media (hover: none) {
+    .socialIcon:active {
+        background-color: var(--color-accent, #BA97DF);
+        transform: scale(0.95);
+    }
+}
+
+/* Focus para accesibilidad */
+.socialIcon:focus-visible {
+    outline: 2px solid var(--color-secondary, #ECA121);
+    outline-offset: 2px;
+}
+
+/* Hover solo desktop */
+@media (hover: hover) {
+
+    .phoneLink:hover,
+    .emailLink:hover {
+        color: var(--color-accent, #BA97DF);
+        text-decoration: underline;
+    }
+}
+
+/* Active para touch */
+@media (hover: none) {
+
+    .phoneLink:active,
+    .emailLink:active {
+        color: var(--color-accent, #BA97DF);
+    }
+}
+
+/* Focus para accesibilidad */
+.phoneLink:focus-visible,
+.emailLink:focus-visible {
+    outline: 2px solid var(--color-secondary, #ECA121);
+    outline-offset: 2px;
+}
+
+.copyrightBar {
+    margin: 1rem;
+
+}
+}
+
+
+
+@media (min-width: 901px) and (max-width: 1200px) {
+    .brandColumn .logo {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .brandColumn .title {
+
+        font-size: 2.4rem;
+    }
+
+    .columnTitle,
+    .socialColumn,
+    .contactColumn {
+
+        text-align: center;
+        padding-bottom: 0.5rem;
+        padding-left: 1rem;
+    }
+
+    .linksColumn {
+
+        text-align: center;
+
+    }
+
+    
+
+    .contactInfo {
+        padding-left: 8rem;
+       
+    }
+
+}
+
+@media(min-width:1201px) {
+
+    .columnTitle{
+          padding-bottom: 0.5rem;
+    }
+    
+    .socialColumn {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+
+    .socialColumn .columnTitle,
+    .contactColumn .columnTitle{
+    
+        text-align: center;
+        
+    }
+
+
+    .socialLinks {
+        padding-top: 0.5rem;
+    
+       
+       
+      
+    }
+
+    .contactInfo {
+
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+       
+    }
+
+    .copyrightBar{
+        margin-top: 0.5rem;
+    }
+}

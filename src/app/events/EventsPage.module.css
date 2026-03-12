@@ -1,0 +1,121 @@
+.mainWrapper {
+    background-color: #f9dbbd;
+    padding-bottom: 6rem;
+}
+
+.hero {
+    text-align: center;
+    padding: 5rem 1rem 4rem;
+    background: #f9dbbd;
+
+}
+
+.mainTitle{
+     color: var(--color-primary) !important;
+}
+
+.highlight {
+    color: #6D1E3A;
+    font-style: italic;
+}
+
+
+.heroSubtitle {
+   color: var(--color-text);
+    text-align: center;
+    max-width: 60rem;
+    margin: auto !important;
+   
+}
+
+
+
+/* Secciones */
+.sectionGroup {
+    margin-bottom: 4rem;
+}
+
+.sectionHeader {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+    color: #6D1E3A;
+}
+
+.sectionIcon {
+    font-size: 2rem;
+}
+
+/* El Grid Mágico */
+.eventsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 2.5rem;
+}
+
+/* CTA */
+.ctaWrapper {
+    margin-top: 8rem;
+    padding: 4rem 2rem;
+    background: #6D1E3A;
+    color: white;
+    border-radius: 2rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.ctaInner {
+    position: relative;
+    z-index: 2;
+}
+
+
+
+.primaryBtn {
+    display: inline-block;
+    margin-top: 2rem;
+    padding: 1rem 2.5rem;
+    background: #ECA121;
+    color: #6D1E3A;
+    text-decoration: none;
+    border-radius: 0.5rem;
+    font-weight: 700;
+    transition: all 0.3s ease;
+}
+
+.primaryBtn:hover {
+    background: #6D1E3A;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(117, 20, 5, 0.2);
+}
+
+/* Estado Vacío */
+.emptyContainer {
+    text-align: center;
+    padding: 10rem 2rem;
+    color: #888;
+}
+
+.emptyIcon {
+    font-size: 5rem;
+    margin-bottom: 2rem;
+    color: #f3e9e2;
+}
+
+
+@media (max-width:900px) {
+
+    .mainTitle{
+        margin: 2rem;
+    }
+
+    .heroSubtitle {
+      
+padding-top: 2rem;
+        padding-left: 4rem;
+        padding-right: 4rem;
+    }
+}

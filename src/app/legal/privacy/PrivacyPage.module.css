@@ -1,0 +1,92 @@
+.privacyWrapper {
+    padding: 6rem 0; /* 60px */
+    min-height: 100vh;
+    background-color: transparent;
+}
+
+.header {
+    margin-top: 2rem;
+    text-align: center;
+    margin-bottom: 4rem;
+    border-bottom: 1px solid rgba(17, 79, 90, 0.1); /* Usando color-text con opacidad */
+    padding-bottom: 3rem;
+}
+
+.title {
+    /* Mantiene la fuente Lora definida en tu h2 del theme */
+    font-size: 3.2rem; 
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.contain {
+    max-width: 80rem; /* 800px para una lectura cómoda */
+    margin: 0 auto;
+}
+
+/* Estilos para el cuerpo de texto (Inter) */
+.contain :global(.MuiTypography-body1) {
+    color: var(--color-text);
+    font-size: 1.6rem; /* 16px según tu body1 */
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+/* Subtítulos de sección (h5 en el theme) */
+.contain h5 {
+    color: var(--color-primary) !important;
+    font-family: var(--font-lora), serif !important;
+    font-weight: 500 !important;
+    margin-top: 4rem !important;
+    margin-bottom: 1.5rem !important;
+    border-left: 4px solid var(--color-secondary); /* Acento en naranja para contraste */
+    padding-left: 1.5rem;
+}
+
+/* Listas adaptadas al sistema */
+.contain ul {
+    margin: 2rem 0;
+    padding-left: 1rem;
+}
+
+.contain li {
+    position: relative;
+    padding-left: 2.5rem;
+    margin-bottom: 1.2rem;
+    color: var(--color-text);
+    font-size: 1.6rem;
+    line-height: 1.5;
+}
+
+/* Viñeta personalizada con el color secundario (naranja) */
+.contain li::before {
+    content: "•";
+    color: var(--color-secondary);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    font-size: 2rem;
+    line-height: 1;
+}
+
+/* Destacados en negrita */
+.contain strong {
+    color: var(--color-primary);
+    font-weight: 600;
+}
+
+/* Responsive */
+@media (max-width: 900px) { /* Breakpoint md de tu theme */
+    .title {
+        font-size: 2.4rem;
+    }
+    
+    .privacyWrapper {
+        padding: 4rem 2rem;
+    }
+
+    .contain :global(.MuiTypography-body1) {
+        font-size: 1.5rem;
+    }
+}
