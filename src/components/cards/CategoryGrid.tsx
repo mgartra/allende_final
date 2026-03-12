@@ -14,8 +14,8 @@ export default function CategoryGrid({ categories }: CategoryGridProps) {
     if (categories.length === 0) {
         return (
             <div className={styles.emptyState}>
-                <Icon name="02" size={80} color="#333" />
-                <p>No hay categorías disponibles</p>
+                <Icon name="02" size={80} color="primary.main" />
+                <Typography variant='body1'>No hay categorías disponibles</Typography>
             </div>
         );
     }
