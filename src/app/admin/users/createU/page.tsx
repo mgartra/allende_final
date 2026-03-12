@@ -36,7 +36,7 @@ export default async function CreateUserPage() {
                 </header>
 
                 <div className={styles.content}>
-                    <CreateUserForm isRoot={isRoot}/>
+                    <CreateUserForm  user={null} isRoot={isRoot}/>
                 </div>
             </Grid>
             <Grid size={{ xs: 0.5, md: 1 }}></Grid>

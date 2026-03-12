@@ -14,6 +14,7 @@ interface User {
     name: string;
     last_name: string;
     email: string;
+    password: string,
     phone: string;
     birth_date: Date;
     registration_date: Date;
@@ -22,24 +23,28 @@ interface User {
 }
 
 interface CreateUserFormProps {
-     user: User;
+    user: User | null;
     isRoot: boolean;
 }
 
-export default function CreateUserForm({ isRoot }: CreateUserFormProps) {
+export default function CreateUserForm({ user, isRoot }: CreateUserFormProps) {
 
     const router = useRouter();
     const [isLoading, setIsLoading] = useState(false);
 
     const [formData, setFormData] = useState({
-        name: '',
-        last_name: '',
-        birth_date: '',
-        email: '',
-        password: '',
-        phone: '',
+        name: user?.name || '',
+        last_name: user?.last_name || '',
+        birth_date: user?.birth_date
+            ? user.birth_date.toISOString().split('T')[0] // ✅ Solo la parte de fecha
+            : '',
+        email: user?.email || '',
+        password: user?.password || '',
+        phone: user?.phone || '',
         user_type: 'user',
-        blocked_until: '',
+        blocked_until: user?.blocked_until
+        ? user.blocked_until.toISOString().split('T')[0]
+        : '',
     });
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -300,7 +305,7 @@ export default function CreateUserForm({ isRoot }: CreateUserFormProps) {
                                 }))}
                                 required
                             />
-                           <span className={styles.radioText}>¿Es usuaria o usuario? *</span> 
+                            <span className={styles.radioText}>¿Es usuaria o usuario? *</span>
                         </label>
 
 
@@ -308,20 +313,20 @@ export default function CreateUserForm({ isRoot }: CreateUserFormProps) {
 
                         <label className={styles.radioLabel}>
                             <input
-                            type='radio'
-                            name='user_type'
-                            value='librarian'
-                            checked={formData.user_type === 'librarian'}
-                            onChange={(e) => setFormData(prev => ({
-                                ...prev,
-                                user_type: e.target.value as 'user' | 'librarian'
-                            }))}
-                            required
-                        />
+                                type='radio'
+                                name='user_type'
+                                value='librarian'
+                                checked={formData.user_type === 'librarian'}
+                                onChange={(e) => setFormData(prev => ({
+                                    ...prev,
+                                    user_type: e.target.value as 'user' | 'librarian'
+                                }))}
+                                required
+                            />
 
                             <span className={styles.radioText}>¿Es bibliotecaria o bibliotecario? *</span>
                         </label>
-                        
+
                     </div>
                 </div>
             )}
