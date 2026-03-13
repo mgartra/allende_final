@@ -122,7 +122,7 @@ export default function HeaderMenu() {
                     </li>
                     <li className={styles.hasDropdown}>
                         <button className={styles.dropdownToggle}>
-                            Categorías
+                            <Link href="/category">Categorías</Link>
                         </button>
                         <ul className={styles.dropdownMenu}>
                             {categories.length > 0 ? (
