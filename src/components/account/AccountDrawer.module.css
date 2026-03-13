@@ -111,7 +111,6 @@
     transition: all 0.3s ease;
 }
 
-/* ✅ Scrollbar personalizado (SIN selector universal) */
 /* Aplicar directamente a los contenedores scrollables */
 .scrollableSection::-webkit-scrollbar {
     width: 6px;
@@ -141,7 +140,7 @@
     scrollbar-color: #c1c1c1 #f5f5f5;
 }
 
-/* src/components/account/AccountDrawer.module.css */
+
 
 .readButton {
     background-color: #6d1e3a;

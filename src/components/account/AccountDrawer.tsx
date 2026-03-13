@@ -15,23 +15,19 @@ import {
     Chip,
     CircularProgress,
     ListItemButton,
-    Button
+
 } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
 import BookIcon from '@mui/icons-material/Book';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import ErrorIcon from '@mui/icons-material/Error';
-import WarningIcon from '@mui/icons-material/Warning';
 import EventIcon from '@mui/icons-material/Event';
 import PersonIcon from '@mui/icons-material/Person';
 import LogoutIcon from '@mui/icons-material/Logout';
-import Image from 'next/image';
 import HeroBtn from '../buttons/HeroBtn';
 import type { AuthUser } from '@/lib/auth/auth';
 import styles from './AccountDrawer.module.css';
-import { LoanType } from '@prisma/client';
 import Link from 'next/link';
-import { toast } from 'sonner';
 
 
 interface UserLoan {
@@ -44,17 +40,7 @@ interface UserLoan {
     pdf_url?: string;
 }
 
-interface EventReservation {
-    reservation_id: number;
-    reservation_date: Date;
-    status: string;
-    event: {
-        event_id: number;
-        name: string;
-        event_date: Date;
-        image: string | null;
-    };
-}
+
 
 interface BlockedUser {
     user_id: number;
@@ -222,12 +208,13 @@ export default function AccountDrawer({
             onClose={onClose}
             PaperProps={{
                 sx: {
-                    width: { xs: '100%', md: '600px' },
-                    bgcolor: 'background.default'
+                    width: { xs: 'calc(100% -32px)', md: '600px' },
+                    bgcolor: 'background.default',
+                    margin:{ xs:'0 16px', md:'0'}
                 }
             }}
         >
-            <Box sx={{ p: 3, height: '100%', display: 'flex', flexDirection: 'column' }}>
+            <Box sx={{ p: 3, height: '100%', display: 'flex', flexDirection: 'column', maxWidth:'100%', overflowX:'hidden' }}>
                 {/* Header del Drawer */}
                 <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 3 }}>
                     <Typography variant="h6" fontWeight="bold" className={styles.drawerTitle}>
