@@ -6,6 +6,8 @@ import { useState } from 'react';
 import { toast } from 'sonner';
 import styles from './EventActions.module.css';
 import { Typography } from '@mui/material';
+import PlaylistAddIcon from '@mui/icons-material/PlaylistAdd';
+import LogoutIcon from '@mui/icons-material/Logout';
 
 interface EventActionsProps {
     eventId: number;
@@ -171,9 +173,10 @@ export default function EventActions({
                     className={`${styles.actionButton} ${styles.detailsButton}`}
                     disabled={isLoading}
                 >
-                    <Typography variant='body2'>
+                    {/* <Typography variant='body2'>
                         Ver detalles
-                    </Typography>
+                    </Typography> */}
+                    <PlaylistAddIcon fontSize='large'/>
                 </button>
             )}
 
@@ -184,9 +187,10 @@ export default function EventActions({
                     className={`${styles.actionButton} ${styles.loginButton}`}
                     disabled={isLoading}
                 >
-                    <Typography variant='body2'>
+                    {/* <Typography variant='body2'>
                         Inicia sesión 
-                    </Typography>
+                    </Typography> */}
+                    <LogoutIcon fontSize='large'/>
                 </button>
             ) : hasActiveReservation ? (
                 <button
@@ -197,7 +201,7 @@ export default function EventActions({
                         {isLoading ? 'Cancelando...' : (
                             <>
 
-                                Cancelar reserva
+                                Cancelar plaza
                             </>
                         )}</Typography>
                 </button>
@@ -223,7 +227,7 @@ export default function EventActions({
                         {isLoading ? 'Reservando...' : (
                             <>
 
-                                Reservar plaza
+                                Me apunto
                             </>
                         )}</Typography>
                 </button>
