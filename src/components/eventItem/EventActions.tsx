@@ -187,21 +187,21 @@ export default function EventActions({
                     className={`${styles.actionButton} ${styles.loginButton}`}
                     disabled={isLoading}
                 >
-                    {/* <Typography variant='body2'>
+                    <Typography variant='caption'>
                         Inicia sesión 
-                    </Typography> */}
-                    <LogoutIcon fontSize='large'/>
+                    </Typography>
+                    {/* <LogoutIcon fontSize='large'/> */}
                 </button>
             ) : hasActiveReservation ? (
                 <button
                     onClick={handleCancel}
                     className={`${styles.actionButton} ${styles.cancelButton}`}
                     disabled={isLoading}
-                > <Typography variant='body2'>
+                > <Typography variant='caption'>
                         {isLoading ? 'Cancelando...' : (
                             <>
 
-                                Cancelar plaza
+                                Cancelar
                             </>
                         )}</Typography>
                 </button>
@@ -223,7 +223,7 @@ export default function EventActions({
                     onClick={handleReserve}
                     className={`${styles.actionButton} ${styles.reserveButton}`}
                     disabled={isLoading}
-                ><Typography variant='body2'>
+                ><Typography variant='caption'>
                         {isLoading ? 'Reservando...' : (
                             <>
 
