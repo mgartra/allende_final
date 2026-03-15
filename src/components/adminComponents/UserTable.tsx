@@ -79,85 +79,91 @@ export default function UsersTable({ users, currentUserIsRoot }: UsersTableProps
     const isBlocked = (isBlocked: boolean): string => {
         return isBlocked ? 'Sí' : 'No';
     };
-    
 
-        const columns: Column[] = [
-            { header: 'Nombre', field: 'full_name' },
-            { header: 'Email', field: 'email' },
-            { header: 'Télefono', field: 'phone' },
 
-            {
-                header: 'Tipo',
-                field: 'user_type',
+    const columns: Column[] = [
+        { header: 'Nombre', field: 'full_name' },
+        { header: 'Email', field: 'email' },
+        { header: 'Télefono', field: 'phone' },
+
+        {
+            header: 'Tipo',
+            field: 'user_type',
+        },
+        {
+            header: 'Préstamos',
+            field: 'active_loans',
+        },
+        {
+            header: '¿Bloqueado?',
+            field: 'is_blocked',
+            render: (value: unknown) => {
+                // Cast seguro a boolean
+                const isBlocked = value as boolean;
+                return isBlocked ? 'Sí' : 'No';
             },
-            {
-                header: 'Préstamos',
-                field: 'active_loans',
-            },
-            {
-                header: '¿Bloqueado?',
-                field: 'is_blocked',
-    
-            },
-        ];
+
+        },
+
+    ];
 
 
-        const renderActions = (user: UserDisplay) => {
-            // Solo root puede gestionar bibliotecarios
-            const canManage = currentUserIsRoot || user.user_type === 'Lector';
+    const renderActions = (user: UserDisplay) => {
+        // Solo root puede gestionar bibliotecarios
+        const canManage = currentUserIsRoot || user.user_type === 'Lector';
 
 
-            if (!canManage) {
-                return (
-                    <span
-                        style={{
-                            color: '#f57c00',
-                            fontSize: '12px',
-                            padding: '4px 8px',
-                            backgroundColor: '#fff3e0',
-                            borderRadius: '4px'
-                        }}
-                    >
-                        Sin acceso
-                    </span>
-                );
-            }
-
+        if (!canManage) {
             return (
-                <div className={styles.actionButtonsContainer}>
-                    <ActionButtons
-                        id={user.user_id}
-                        editUrl={`/admin/users/editU?id=${user.user_id}`}
-                        entity="user"
-                        entityName={`${user.full_name}`}
-                        size="small"
-                    />
-                </div>
+                <span
+                    style={{
+                        color: '#f57c00',
+                        fontSize: '12px',
+                        padding: '4px 8px',
+                        backgroundColor: '#fff3e0',
+                        borderRadius: '4px'
+                    }}
+                >
+                    Sin acceso
+                </span>
             );
-        };
+        }
 
         return (
-            <>
-                <SearchBar<UserDisplay>
-                    data={users}
-                    onSearch={setFilteredUsers}
-                    searchFields={['full_name', 'email', 'phone']}
-                    placeholder="Buscar usuarios por nombre, email o teléfono..."
-                    size="medium"
-                    autoFocus={true}
-                    className={styles.searchBar}
+            <div className={styles.actionButtonsContainer}>
+                <ActionButtons
+                    id={user.user_id}
+                    editUrl={`/admin/users/editU?id=${user.user_id}`}
+                    entity="user"
+                    entityName={`${user.full_name}`}
+                    size="small"
                 />
-
-                <PaginatedTable<UserDisplay>
-                    data={filteredUsers}
-                    columns={columns}
-                    itemsPerPage={10}
-                    keyField="user_id"
-                    emptyMessage="No hay usuarios para mostrar"
-                    entityName="usuarios"
-                    actions={renderActions}
-                    actionsHeader="Acciones"
-                />
-            </>
+            </div>
         );
-    }
+    };
+
+    return (
+        <>
+            <SearchBar<UserDisplay>
+                data={users}
+                onSearch={setFilteredUsers}
+                searchFields={['full_name', 'email', 'phone']}
+                placeholder="Buscar usuarios por nombre, email o teléfono..."
+                size="medium"
+                autoFocus={true}
+                className={styles.searchBar}
+            />
+
+            <PaginatedTable<UserDisplay>
+                data={filteredUsers}
+                columns={columns}
+                itemsPerPage={10}
+                keyField="user_id"
+                emptyMessage="No hay usuarios para mostrar"
+                entityName="usuarios"
+                actions={renderActions}
+                actionsHeader="Acciones"
+            />
+        </>
+    );
+}

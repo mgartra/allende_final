@@ -18,6 +18,7 @@ import styles from './PaginatedTable.module.css';
 export interface Column {
     header: string;
     field: string;
+    render?: (value: unknown) => React.ReactNode;
 }
 
 export interface PaginatedTableProps<T> {
@@ -64,12 +65,16 @@ export default function PaginatedTable<T>({
     }
 
     // Función para renderizar una celda
-    const renderCell = (item: T, field: string): React.ReactNode => {
-        const value = (item as Record<string, unknown>)[field];
+    const renderCell = (item: T, col:Column): React.ReactNode => {
+        const value = (item as Record<string, unknown>)[col.field];
 
         // Si es null o undefined, mostrar "—"
         if (value == null) {
             return '—';
+        }
+
+        if(col.render){
+            return col.render(value);
         }
 
         // Si es fecha, formatear
@@ -119,7 +124,7 @@ export default function PaginatedTable<T>({
                                 {columns.map((col, index) => (
                                     <TableCell key={`cell-${String(item[keyField])}-${index}`}>
                                         <Typography variant="body2">
-                                            {renderCell(item, col.field)}
+                                            {renderCell(item, col)}
                                         </Typography>
                                     </TableCell>
                                 ))}
@@ -160,7 +165,7 @@ export default function PaginatedTable<T>({
                                     {col.header}:
                                 </Typography>
                                 <Typography variant="body2">
-                                    {renderCell(item, col.field)}
+                                    {renderCell(item, col)}
                                 </Typography>
                             </div>
                         ))}
