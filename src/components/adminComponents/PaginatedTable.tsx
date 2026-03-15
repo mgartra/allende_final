@@ -26,6 +26,8 @@ export interface PaginatedTableProps<T> {
     columns: Column[];
     itemsPerPage?: number;
     keyField: keyof T;
+    currentPage?:number;
+    onPageChange?: (page:number) => void;
     emptyMessage?: string;
     entityName?: string;
     actions?: (item: T) => React.ReactNode;
@@ -35,8 +37,10 @@ export interface PaginatedTableProps<T> {
 export default function PaginatedTable<T>({
     data,
     columns,
-    itemsPerPage = 10,
+    itemsPerPage = 5,
     keyField,
+    currentPage: ccurrentPageProp,
+    onPageChange,
     emptyMessage = 'No hay datos para mostrar',
     entityName = 'elementos',
     actions,
@@ -44,6 +48,8 @@ export default function PaginatedTable<T>({
 }: PaginatedTableProps<T>) {
     // Estado para la página actual
     const [currentPage, setCurrentPage] = useState<number>(1);
+     const [internalPage, setInternalPage] = useState(1);
+      const setPage = onPageChange ?? setInternalPage;
 
     // Calcular el número total de páginas
     const totalPages: number = Math.ceil(data.length / itemsPerPage);
