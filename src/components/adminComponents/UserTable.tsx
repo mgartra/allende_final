@@ -31,12 +31,20 @@ export default function UsersTable({ users, currentUserIsRoot }: UsersTableProps
     const router = useRouter();
     const [isPending, startTransition] = useTransition();
     const [filteredUsers, setFilteredUsers] = useState<UserDisplay[]>(users);
+    //Estado para la página actual
+    const [currentPage, setCurrentPage] = useState(1);
 
 
 
     useEffect(() => {
         setFilteredUsers(users);
+        setCurrentPage(1);
     }, [users])
+
+    const handleSearch = (results: UserDisplay[]) => {
+        setFilteredUsers(results);
+        setCurrentPage(1);
+    };
 
     const handleDelete = async (userId: number, full_name: string) => {
         if (!confirm(`¿Estás seguro de que quieres eliminar ${full_name}? Esta acción no se puede deshacer.`)) {
@@ -146,7 +154,7 @@ export default function UsersTable({ users, currentUserIsRoot }: UsersTableProps
         <>
             <SearchBar<UserDisplay>
                 data={users}
-                onSearch={setFilteredUsers}
+                onSearch={handleSearch}
                 searchFields={['full_name', 'email', 'phone']}
                 placeholder="Buscar usuarios por nombre, email o teléfono..."
                 size="medium"
@@ -157,7 +165,7 @@ export default function UsersTable({ users, currentUserIsRoot }: UsersTableProps
             <PaginatedTable<UserDisplay>
                 data={filteredUsers}
                 columns={columns}
-                itemsPerPage={10}
+                itemsPerPage={5}
                 keyField="user_id"
                 emptyMessage="No hay usuarios para mostrar"
                 entityName="usuarios"
